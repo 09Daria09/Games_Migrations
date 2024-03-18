@@ -1,0 +1,80 @@
+﻿<Window x:Class="Games_Migrations.Add"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Games_Migrations"
+        mc:Ignorable="d"
+        Title="Добавление новой игры" Height="555" Width="450"
+        Background="#FF2D2D30">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#E5E5E5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Background" Value="#FF333337"/>
+            <Setter Property="Foreground" Value="#E5E5E5"/>
+            <Setter Property="BorderBrush" Value="#FF3E3E42"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Background" Value="#FF007ACC"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="0,20,0,0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF005C99"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Название:" Grid.Row="0"/>
+        <TextBox x:Name="NameTextBox" Grid.Row="1"/>
+
+        <TextBlock Text="Студия:" Grid.Row="2"/>
+        <TextBox x:Name="StudioTextBox" Grid.Row="3"/>
+
+        <TextBlock Text="Стиль:" Grid.Row="4"/>
+        <TextBox x:Name="StyleTextBox" Grid.Row="5"/>
+
+        <TextBlock Text="Дата релиза (гггг-мм-дд):" Grid.Row="6"/>
+        <TextBox x:Name="ReleaseDateTextBox" Grid.Row="7"/>
+
+        <TextBlock Text="Количество проданных копий:" Grid.Row="8"/>
+        <TextBox x:Name="SoldCopiesTextBox" Grid.Row="9"/>
+
+        <TextBlock Text="Режим игры:" Grid.Row="10"/>
+        <ComboBox x:Name="GameModeComboBox" Grid.Row="11" DisplayMemberPath="Mode" SelectedValuePath="Id"/>
+
+        <Button Content="Добавить" Grid.Row="12" HorizontalAlignment="Right" Click="AddButton_Click"/>
+    </Grid>
+
+</Window>
